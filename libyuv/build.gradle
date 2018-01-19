@@ -13,9 +13,18 @@ android {
         externalNativeBuild {
             cmake {
                 cppFlags "-std=c++11 -frtti -fexceptions"
+                cFlags "-Wall -fexceptions"
+                abiFilters "armeabi-v7a"
+                //arguments "-DTEST=ON"  // for CMakeList.txt  依赖gtest
             }
         }
 
+    }
+
+    sourceSets {
+        main{
+            jni.srcDirs=['src/main/jni']
+        }
     }
 
     buildTypes {

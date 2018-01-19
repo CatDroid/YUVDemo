@@ -23,4 +23,5 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.2.1'  // Android 5.1 之后才有 AppCompactActivity 之前是 ActionBarActivity
 
+    compile project(path: ':libyuv') // 指明依赖另外一个模块 这样另外一个模块的动态库才会拷贝到APK中
 }
