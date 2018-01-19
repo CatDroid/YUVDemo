@@ -1,0 +1,4 @@
+[submodule "libyuv/src/main/jni"]
+	path = libyuv/src/main/jni
+	url = https://github.com/CatDroid/libyuv.git
+	branch = YuvDemoBranch

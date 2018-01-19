@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/YUVDemo.iml" filepath="$PROJECT_DIR$/YUVDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/YUVDemo.iml" filepath="$PROJECT_DIR$/YUVDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libyuv/libyuv.iml" filepath="$PROJECT_DIR$/libyuv/libyuv.iml" />
     </modules>
   </component>
 </project>
