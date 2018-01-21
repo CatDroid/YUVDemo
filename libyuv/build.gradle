@@ -2,8 +2,9 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 22
-    buildToolsVersion "27.0.2"
+    buildToolsVersion "26.0.2"
 
+    // 1.默认配置
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 22
@@ -16,17 +17,21 @@ android {
                 cFlags "-Wall -fexceptions"
                 abiFilters "armeabi-v7a"
                 //arguments "-DTEST=ON"  // for CMakeList.txt  依赖gtest
-            }
+                targets "jni_yuv"   // 指定打包的动态库 否则所有cmake or ndk编译出来的动态库都打包到APK
+                // targets 这个选项可以在 productFlavors.xxx.externalNativeBuild.cmake{ targets }指定该product flavor应该打包哪些文件
+             }
         }
 
     }
 
+    // 2.源码集合
     sourceSets {
         main{
             jni.srcDirs=['src/main/jni']
         }
     }
 
+    // 3.release和debug构建参数
     buildTypes {
         release {
             minifyEnabled false
@@ -34,9 +39,10 @@ android {
         }
     }
 
+    // 4.链接Native层   目前仅仅用来链接gradle到CMakeLists.txt或者Android.mk
     externalNativeBuild {
         cmake {
-            path "src/main/jni/CMakeLists.txt"
+            path "src/main/cpp/CMakeLists.txt"
         }
     }
 }
